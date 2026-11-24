@@ -1,0 +1,15 @@
+{
+  "id": "choi-yoo-kim-kwon-won-healing-chains",
+  "revision": 2,
+  "problem_ids": ["choi-yoo-kim-kwon-won-2026-healing-chain-unbounded"],
+  "topic": "Exact healing displacement on full rooted triangle trees",
+  "title": "Unbounded healing chains in the question of Choi, Yoo, Kim, Kwon and Won",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "The constant-chain-length question of Choi, Yoo, Kim, Kwon and Won (arXiv:2610.41277v1, Section VIII, Open problems (1), p. 7) has a negative answer already on outerplanar subcubic graphs of treewidth two: root-to-leaf forcing makes the required displacement arbitrarily large. For every full rooted triangle tree, the minimum displacement from its nonroot-apex set to an augmentable tight set of the same size equals its shortest leaf depth. The same number is the minimum number of tight exchanges. At depth h, the smallest graph in this class has 9*2^h - 6 vertices. Every optimal two-colouring of a tree of triangles is nevertheless healable, separating the stuck-set obstruction from failure of a prescribed maximum-cut certificate.",
+  "summary": "An exact shortest-leaf formula and sharp order bound for healing displacement, with an explicit attaining exchange sequence, on outerplanar subcubic triangle trees of treewidth two. Every optimal two-colouring of any bridge-connected tree of triangles is healable. The pinned Lean declaration establishes nonexistence of a uniform displacement bound; the stronger statements have written proofs. Exact finite computations cover uniform heights 1–10, all 428 ordered full rooted trees with 4–14 triangles, and all 162 optimal colourings of the height-one graph.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/0ad94071772b2f32b432905d088bfce029d8d29e/D5/S3/Combinatorics/Graph/Potts/HealingUnbounded.lean"
+}

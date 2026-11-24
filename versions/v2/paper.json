@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 77894,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "b657a45ed21b70ff9007c1e1070477d2855edaa199fe2c55663393c0e58fee9f",
+      "sha256": "b657a45ed21b70ff9007c1e1070477d2855edaa199fe2c55663393c0e58fee9f"
+    },
+    "source": {
+      "bytes": 18163,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "8cfd4c8ae13d741bef36987893dfe0babc9babe07bc5f4bc172e8f768af436ec",
+      "sha256": "8cfd4c8ae13d741bef36987893dfe0babc9babe07bc5f4bc172e8f768af436ec"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "The constant-chain-length question of Choi, Yoo, Kim, Kwon and Won (arXiv:2610.41277v1, Section VIII, Open problems (1), p. 7) has a negative answer already on outerplanar subcubic graphs of treewidth two: root-to-leaf forcing makes the required displacement arbitrarily large. For every full rooted triangle tree, the minimum displacement from its nonroot-apex set to an augmentable tight set of the same size equals its shortest leaf depth. The same number is the minimum number of tight exchanges. At depth h, the smallest graph in this class has 9*2^h - 6 vertices. Every optimal two-colouring of a tree of triangles is nevertheless healable, separating the stuck-set obstruction from failure of a prescribed maximum-cut certificate.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "0ad94071772b2f32b432905d088bfce029d8d29e",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/0ad94071772b2f32b432905d088bfce029d8d29e/D5/S3/Combinatorics/Graph/Potts/HealingUnbounded.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 77894,
+      "sha256": "b657a45ed21b70ff9007c1e1070477d2855edaa199fe2c55663393c0e58fee9f",
+      "url": "/api/v1/collected-papers/choi-yoo-kim-kwon-won-healing-chains/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-24T01:24:41.666517982Z",
+    "record": "choi-yoo-kim-kwon-won-healing-chains",
+    "repository_name": "choi-yoo-kim-kwon-won-healing-chains",
+    "source": {
+      "bytes": 18163,
+      "sha256": "8cfd4c8ae13d741bef36987893dfe0babc9babe07bc5f4bc172e8f768af436ec",
+      "url": "/api/v1/collected-papers/choi-yoo-kim-kwon-won-healing-chains/files/source?version=2"
+    },
+    "title": "Unbounded healing chains in the question of Choi, Yoo, Kim, Kwon and Won",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-24T01:24:41.666517982Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "choi-yoo-kim-kwon-won-healing-chains"
+  }
+}

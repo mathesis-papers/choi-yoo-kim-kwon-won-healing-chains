@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "arithmetic": "exact integers",
+  "scope": "All ordered full rooted triangle trees with 4 through 14 triangles; exact shortest-leaf displacement, deletion identities along each root-to-leaf exchange path, and exhaustive small-graph healability.",
+  "tree_families": [
+    {
+      "triangles": 4,
+      "ordered_trees": 1,
+      "shortest_leaf_depths": [
+        1
+      ],
+      "paths_checked": 3,
+      "exchange_states_checked": 6
+    },
+    {
+      "triangles": 6,
+      "ordered_trees": 3,
+      "shortest_leaf_depths": [
+        1
+      ],
+      "paths_checked": 12,
+      "exchange_states_checked": 30
+    },
+    {
+      "triangles": 8,
+      "ordered_trees": 9,
+      "shortest_leaf_depths": [
+        1
+      ],
+      "paths_checked": 45,
+      "exchange_states_checked": 132
+    },
+    {
+      "triangles": 10,
+      "ordered_trees": 28,
+      "shortest_leaf_depths": [
+        1,
+        2
+      ],
+      "paths_checked": 168,
+      "exchange_states_checked": 558
+    },
+    {
+      "triangles": 12,
+      "ordered_trees": 90,
+      "shortest_leaf_depths": [
+        1,
+        2
+      ],
+      "paths_checked": 630,
+      "exchange_states_checked": 2316
+    },
+    {
+      "triangles": 14,
+      "ordered_trees": 297,
+      "shortest_leaf_depths": [
+        1,
+        2
+      ],
+      "paths_checked": 2376,
+      "exchange_states_checked": 9516
+    }
+  ],
+  "ordered_trees_checked": 428,
+  "exhaustive_healability": {
+    "vertices": 12,
+    "binary_colorings_enumerated": 4096,
+    "optimal_colorings": 162,
+    "healable_colorings": 162
+  },
+  "status": "pass"
+}

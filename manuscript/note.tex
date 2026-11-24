@@ -1,0 +1,397 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\fr}{\operatorname{fr}}
+\newcommand{\ioct}{\operatorname{ioct}}
+\title{Unbounded healing chains in the question of\\
+Choi, Yoo, Kim, Kwon and Won}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\
+\small ChronoAI Pte Ltd, Singapore}
+\date{November 17, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The constant-chain-length question of Choi, Yoo, Kim, Kwon and Won
+(arXiv:2610.41277v1, Section VIII, Open problems (1), p.~7) has a
+negative answer already on outerplanar subcubic graphs of treewidth two:
+root-to-leaf forcing makes the required displacement arbitrarily large.
+For every full rooted triangle tree, we prove that the minimum displacement
+from its nonroot-apex set to an augmentable tight set of the same size
+equals its shortest leaf depth. The same number is the minimum number of
+tight exchanges. At depth $h$, the smallest graph in this class has
+$9\cdot2^h-6$ vertices. Every optimal two-colouring of a tree of triangles
+is nevertheless healable, separating the stuck-set obstruction from
+failure of a prescribed maximum-cut certificate.
+\end{abstract}
+
+\section{The question and the relevant distinctions}
+
+Choi, Yoo, Kim, Kwon and Won ask, ``is the chain length bounded by a
+constant?''\ \cite[Section VIII, Open problems (1), p.~7]{CYKKW}
+Their Proposition~15 constructs a route out of a stuck tight set with a
+bound depending on the number of components of the remaining graph.
+We determine the exact escape distance for a class of triangle trees,
+including an infinite family in which that distance tends to infinity.
+
+For a finite simple graph $G$, let $\fr(G)$ be the minimum number of
+monochromatic edges in a two-colouring of $V(G)$. For $X\subseteq V(G)$,
+write $G-X$ for the induced graph on $V(G)\setminus X$ and put
+\[
+ \varphi_G(X)=|X|+\fr(G-X).
+\]
+As in Appendix~B of \cite{CYKKW}, a set $X$ is \emph{tight} if it is
+independent and $\varphi_G(X)=\fr(G)$. It is \emph{augmentable} if
+$X\cup\{v\}$ is tight for some $v\notin X$; a tight set that is not
+augmentable is \emph{stuck}. A tight exchange removes one selected vertex
+and inserts another, preserving tightness and cardinality. Define
+\[
+ d_G(S)=\min\{|S\setminus T|: T\text{ augmentable and tight},\ |T|=|S|\}
+\]
+whenever this set of destinations is nonempty.
+
+The positive identity $\ioct(G)=\fr(G)$ on subcubic graphs without a
+$K_4$ component is distinct from this escape question. Here $\ioct(G)$
+is the minimum size of an independent odd cycle transversal.
+As explained in \cite[Section V and Supplement A.1]{CYKKW}, the identity
+follows from the optimal-deletion equalities of Akbari, Beikmohammadi,
+Klav\v{z}ar and Movarraei \cite[Theorems 1.1 and 4.1]{ABKM}, whose
+preprint appeared in 2021. The constructive chain procedure is the
+contribution of \cite[Appendix B]{CYKKW}. Our issue is the cost of
+escaping a specified choice, not the existence of an optimal transversal.
+
+There is also a distinction from reconfiguration between two \emph{full}
+independent transversals. Buys, Kang and Ozeki prove connectivity under
+degree and block-size hypotheses \cite[Theorem 1.2]{BKO}; Hajebi and
+Haxell give polynomial-length paths or a dominating-set obstruction
+\cite[Theorem 1.4 and Corollary 1.5]{HH}. For triangle blocks below,
+deleting the edges within each block leaves a matching, with maximum
+degree one and block size three, so their full-transversal setting is
+applicable. The nonroot-apex set instead misses the root block, and the
+destination ranges over all augmentable sets of that same smaller size.
+These full-transversal results do not bound $d_G(S)$ by a constant.
+
+\section{Exact displacement on a rooted triangle tree}
+
+Let $\mathcal T$ be a finite rooted tree whose root has three children
+and whose other nodes have either zero or two children. Write $B$ for
+its number of nodes and $\delta\geq1$ for its shortest root-to-leaf
+distance, measured in edges. Replace each node $u$ by a triangle $Q_u$.
+At each nonroot node designate one vertex $a_u$ as its \emph{apex}.
+Join each parent triangle to its child's apex by one edge. The root's
+three child edges use its three distinct vertices; at any other internal
+node, the two child edges use its two nonapex vertices. Call the resulting
+graph $G_{\mathcal T}$ and set
+\[
+ S_{\mathcal T}=\{a_u:u\ne\text{root}\}.
+\]
+All intertriangle edges are bridges. A tree of this specified form is
+called a full rooted triangle tree here.
+
+\begin{theorem}\label{thm:sharp}
+The graph $G_{\mathcal T}$ is connected, simple, outerplanar, subcubic,
+of treewidth two, and has $3B$ vertices. It is not $K_4$, and
+\[
+ \fr(G_{\mathcal T})=B,\qquad |S_{\mathcal T}|=B-1,\qquad
+ \fr(G_{\mathcal T}-S_{\mathcal T})=1.
+\]
+The set $S_{\mathcal T}$ is stuck and tight, and
+\begin{equation}\label{eq:sharp}
+ d_{G_{\mathcal T}}(S_{\mathcal T})=\delta.
+\end{equation}
+The minimum number of tight exchanges from $S_{\mathcal T}$ to an
+augmentable set is also $\delta$. There is an attaining sequence whose
+earlier sets are all stuck. Moreover, $B\geq3\cdot2^\delta-2$.
+\end{theorem}
+
+\begin{lemma}\label{lem:deletion}
+Every independent set $X$ in $G_{\mathcal T}$ satisfies
+\[
+ \fr(G_{\mathcal T}-X)=B-|X|.
+\]
+Consequently every independent set is tight.
+\end{lemma}
+\begin{proof}
+An independent set meets each triangle in at most one vertex, so exactly
+$B-|X|$ triangles remain intact. Each contributes at least one
+monochromatic edge in any two-colouring. For the reverse inequality,
+colour each intact triangle with exactly one monochromatic edge and
+each remaining two-vertex edge properly. The surviving bridges connect
+these pieces according to a forest. Root each component of that forest.
+Moving away from its root, flip all colours in a child piece if needed
+to make its parent bridge bichromatic. Each piece has at most one
+already coloured parent, and flipping preserves its internal cost.
+Thus every bridge is bichromatic and the lower bound is attained.
+Taking $X=\varnothing$ gives $\fr(G_{\mathcal T})=B$ and hence tightness.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:sharp}]
+Each vertex has its two triangle neighbours and at most one bridge
+neighbour. The underlying tree gives connectedness and simplicity.
+An outerplane drawing is obtained by attaching successive triangles
+and their parent bridges in the exterior face, starting at the root;
+all vertices remain on that face. For a tree decomposition, take a bag
+for each triangle and a two-vertex bag for each bridge, joining a bridge
+bag to the two incident triangle bags. The bag graph is a tree, and
+the bags containing any fixed vertex are connected. Its maximum bag
+size is three, so the width is at most two; the presence of a triangle
+forces width at least two. There are $3B\geq12$ vertices, excluding $K_4$.
+
+The set $S=S_{\mathcal T}$ is independent. A bridge has a nonapex
+parent endpoint, except at the root, where no vertex belongs to $S$.
+It has size $B-1$, and deleting it leaves the root triangle and
+$B-1$ isolated edges. Lemma~\ref{lem:deletion} gives tightness and
+residual frustration one. Every vertex outside $S$ has a neighbour in
+$S$: a root vertex sees its child's apex, and a nonroot nonapex vertex
+sees its own apex. Thus $S$ is stuck.
+
+For the lower bound, let $T$ be augmentable and tight with $|T|=B-1$,
+and choose $v$ such that $R=T\cup\{v\}$ is independent and tight.
+Since $|R|=B$, it selects exactly one vertex per triangle. The selected
+root vertex is incident to the bridge to some child $u_1$, so
+$a_{u_1}\notin R$. The selected vertex of $Q_{u_1}$ is therefore
+nonapex. If $u_1$ is internal, that vertex points to a child $u_2$,
+again excluding $a_{u_2}$. Continue to a leaf at depth $\ell\geq\delta$.
+The distinct apices on this path lie in
+$S\setminus R\subseteq S\setminus T$. Hence $|S\setminus T|\geq\delta$.
+
+To attain the bound, choose a shortest root-to-leaf path
+$u_0,u_1,\ldots,u_\delta$. For $0\leq i<\delta$, let $z_i$ be the
+parent endpoint of the bridge from $Q_{u_i}$ to $a_{u_{i+1}}$; let
+$z_\delta$ be either nonapex vertex of the leaf triangle. Set
+\[
+ R=\bigl(S\setminus\{a_{u_1},\ldots,a_{u_\delta}\}\bigr)
+       \cup\{z_0,z_1,\ldots,z_\delta\}.
+\]
+This selects one vertex in each triangle. On a bridge between path
+triangles the child apex is absent; on a bridge leaving the path the
+parent endpoint is absent. Bridges wholly off the path also have their
+nonapex parent endpoints absent. Thus $R$ is independent.
+Put $T=R\setminus\{z_\delta\}$. Both sets are tight by
+Lemma~\ref{lem:deletion}; $T$ is augmentable and misses exactly the
+$\delta$ displayed apices of $S$, proving \eqref{eq:sharp}.
+
+For $0\leq j\leq\delta$ put
+\[
+ T_j=\bigl(S\setminus\{a_{u_1},\ldots,a_{u_j}\}\bigr)
+          \cup\{z_0,\ldots,z_{j-1}\},
+\]
+with both displayed sets empty at $j=0$. These are independent subsets
+of $R$, hence tight, and each step exchanges $a_{u_{j+1}}$ for $z_j$.
+The displacement of $T_j$ is $j$, so the lower bound makes every
+$T_j$ with $j<\delta$ stuck, whereas $T_\delta=T$ is augmentable.
+Any sequence of $m$ single-vertex exchanges has displacement at most $m$;
+therefore this sequence is shortest. Finally all nodes at depths less
+than $\delta$ are internal, so
+$B\geq1+3\sum_{i=0}^{\delta-1}2^i=3\cdot2^\delta-2$.
+\end{proof}
+
+\begin{corollary}\label{cor:uniform}
+For every $h\geq1$, take all leaves at depth $h$. The resulting graph
+$G_h$ has $B=3\cdot2^h-2$ triangles and $n=9\cdot2^h-6$ vertices,
+and its stuck apex set has exact displacement $h$. Thus no constant
+bound holds even for outerplanar graphs of treewidth two.
+Among full rooted triangle trees with shortest leaf depth $h$, this
+order is the smallest possible. More generally,
+\[
+ d_{G_{\mathcal T}}(S_{\mathcal T})
+ \leq\left\lfloor\log_2\frac{|V(G_{\mathcal T})|+6}{9}\right\rfloor,
+\]
+with equality on $G_h$.
+\end{corollary}
+\begin{proof}
+Count the three branches of the root and the binary levels below them.
+Theorem~\ref{thm:sharp} gives the exact distance and the matching
+order lower bound. Solving that lower bound for $\delta$ gives the
+displayed inequality. This is an upper bound within this triangle-tree
+class, not an upper bound for all subcubic graphs.
+\end{proof}
+
+\section{Chain stages and the prescribed-colouring sibling}
+
+\begin{corollary}\label{cor:stages}
+For $G_{\mathcal T}$ and $S_{\mathcal T}$, the smallest possible
+zero-based stage index of a successful test in Proposition~15 of
+\cite{CYKKW} is $\delta-1$. In particular, $G_h$ requires at least
+$h$ tested stages, counting the successful stage.
+\end{corollary}
+\begin{proof}
+At stage $j$, the maintained set has undergone $j$ exchanges from $S$.
+One further test exchange gives a set $U$ with
+$|S\setminus U|\leq j+1$. If $U$ is augmentable,
+Theorem~\ref{thm:sharp} implies $j+1\geq\delta$.
+The sequence $T_j$ in its proof is a chain of the source's kind:
+$G_{\mathcal T}-T_j$ has $Q_{u_j}$ as its sole intact triangle,
+with all other components isolated edges. Exchanging
+$a_{u_{j+1}}$ for $z_j$ moves the odd triangle to $Q_{u_{j+1}}$.
+The first successful test is therefore at $j=\delta-1$.
+\end{proof}
+
+There are $B$ components in $G_{\mathcal T}-S_{\mathcal T}$, so the
+source's component-dependent upper bound is retained. Its observation
+that the tests used at most three stages is a finite experimental
+statement. A universal three-stage bound is not asserted in the source;
+it fails for $G_4$ (138 vertices). The polynomial construction of
+\cite[Corollary 16]{CYKKW} is consistent with these logarithmic
+obstructions.
+
+The source also distinguishes a healable Ising ground state from a
+graph on which every Ising ground state is healable
+\cite[Section V and Appendix A, ``Strong version'']{CYKKW}.
+A two-colouring is \emph{healable} if one can choose exactly one
+endpoint of each monochromatic edge so that the chosen vertices are
+independent. The following restricted positive result shows why the
+escape obstruction is different.
+
+\begin{corollary}\label{cor:healable}
+Let $G$ be obtained from vertex-disjoint triangles by adding bridges
+whose contraction gives a tree. Every optimal two-colouring of $G$ is
+healable. No degree restriction is needed for this assertion.
+\end{corollary}
+\begin{proof}
+The colouring argument of Lemma~\ref{lem:deletion} with $X=\varnothing$
+works for this more general bridge pattern, so $\fr(G)=B$, the number
+of triangles. Every optimal colouring therefore has exactly one
+monochromatic edge per triangle and none on the bridges.
+Root the contracted tree. In the root triangle choose either endpoint
+of its monochromatic edge. Proceed away from the root. The selected
+vertex of a triangle's parent can forbid at most one of its two
+candidate endpoints, because exactly one bridge joins them; choose a
+remaining endpoint. Every bridge constraint is met when its child is
+processed, so the resulting $B$ choices are independent. They contain
+exactly one endpoint of every monochromatic edge.
+\end{proof}
+
+\section{Coverage and verification}
+
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{@{}p{0.32\linewidth}p{0.63\linewidth}@{}}
+\toprule
+Source item & Mathematical coverage \\
+\midrule
+\endfirsthead
+\toprule
+Source item & Mathematical coverage \\
+\midrule
+\endhead
+\cite{CYKKW}, Section VIII, question (1), p.~7 &
+Answered: no. Corollaries~\ref{cor:uniform} and \ref{cor:stages}
+give unbounded exact distances and stage counts. \\
+Uneven full triangle trees &
+Not posed; proved. Theorem~\ref{thm:sharp} identifies shortest leaf
+depth as the exact distance; Corollary~\ref{cor:uniform} gives the
+sharp order bound within this class. \\
+\cite{CYKKW}, Section VIII, three-stage observation &
+Finite observation retained. A universal reading is not asserted in
+the source; it fails for $G_4$. \\
+\cite{CYKKW}, Proposition 15, pp.~10--11; Corollary 16, p.~11 &
+Prior constructive results cited. Their component-dependent and
+polynomial bounds are unchanged. \\
+\cite{CYKKW}, Appendix A, stuck-set examples, p.~9; Appendix B, p.~11 &
+Prior 12-vertex example cited. Theorem~\ref{thm:sharp} proves an
+infinite family and its exact escape distances. \\
+\cite{CYKKW}, Appendix A, strong version, pp.~8--9 &
+Prior general counterexample cited. The restricted assertion in
+Corollary~\ref{cor:healable} is not posed there; proved for every
+bridge-connected tree of triangles. \\
+\cite{CYKKW}, Theorem 8 and Supplement A.1 &
+Prior positive transversal identity cited, with its antecedent
+\cite[Theorems 1.1 and 4.1]{ABKM}. \\
+\cite{ABKM}, Problem 3.2, pp.~7--8 &
+Prior answer cited: no, by Cambie, Haslegrave and Kang
+\cite{CHK}; planar degree-four examples are in
+\cite[Theorem 1.2]{KPS}. Not a new claim here. \\
+\cite{CYKKW}, Section VIII, questions (2)--(4), pp.~7--8 &
+Not covered: the higher-degree complexity window, Penrose
+thermodynamic kinks, and finite-temperature excitations. \\
+Other energy, hardness and reduction statements of \cite{CYKKW},
+including Supplement A.2--A.7 &
+Not covered by the triangle-tree argument. \\
+\bottomrule
+\end{longtable}
+
+The pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/0ad94071772b2f32b432905d088bfce029d8d29e/D5/S3/Combinatorics/Graph/Potts/HealingUnbounded.lean}{\texttt{HealingUnbounded.lean}}
+contains the declaration
+\begin{quote}\small
+\nolinkurl{D5.S3.Combinatorics.Graph.Potts.HealingUnbounded.result}.
+\end{quote}
+Its statement is the negation of \texttt{claim}: no natural number $C$
+uniformly bounds displacement to an augmentable tight set of equal size
+over finite connected subcubic graphs other than $K_4$, starting from
+stuck tight sets with positive residual frustration. Its definitions
+of frustration, induced vertex deletion, tightness and augmentation
+agree with those above. Its construction is $G_h$, indexed by root
+block $0$, root children $1,2,3$, and children $2u+2,2u+3$ at each
+positive internal block $u$.
+
+The exact shortest-leaf formula, attaining sequences, outerplanarity,
+treewidth, deletion identity, stage-index interpretation and universal
+healability within triangle trees have written proofs in this note.
+The accompanying exact-integer programs give separate finite checks:
+\texttt{verify.py} covers uniform heights $1$--$10$ (up to 9,210
+vertices), including small exhaustive enumerations;
+\texttt{verify\_siblings.py} covers all 428 ordered full rooted trees
+with $4$--$14$ triangles and all 162 optimal two-colourings of $G_1$.
+The ranges and outputs are in \texttt{README.md}, \texttt{checks.json}
+and \texttt{sibling-checks.json}. These finite checks supplement the
+proofs for arbitrary finite trees.
+
+\begin{thebibliography}{9}
+\bibitem{CYKKW}
+J. Choi, S. Yoo, C. Kim, H. Y. Kwon and C. Won,
+\emph{Coordination three heals, coordination four is hard: the
+antiferromagnetic Potts model with a costly third state},
+\href{https://arxiv.org/abs/2610.41277v1}{arXiv:2610.41277v1}
+(October 30, 2026), Section VIII, pp.~7--8; Appendix B, pp.~9--11;
+Supplemental Material, A.1.
+
+\bibitem{ABKM}
+S. Akbari, A. Beikmohammadi, S. Klav\v{z}ar and N. Movarraei,
+\emph{On the chromatic vertex stability number of graphs},
+European Journal of Combinatorics \textbf{102}, 103504 (2022).
+\href{https://doi.org/10.1016/j.ejc.2021.103504}{doi:10.1016/j.ejc.2021.103504}.
+\href{https://arxiv.org/abs/2108.12994v2}{arXiv:2108.12994v2},
+Theorems 1.1 (p.~2) and 4.1 (p.~8).
+
+\bibitem{BKO}
+P. Buys, R. J. Kang and K. Ozeki,
+\emph{Reconfiguration of independent transversals},
+Random Structures \& Algorithms \textbf{67}, e70025 (2025).
+\href{https://doi.org/10.1002/rsa.70025}{doi:10.1002/rsa.70025}.
+\href{https://arxiv.org/abs/2407.04367v1}{arXiv:2407.04367v1}
+(July 5, 2024), Theorem 1.2.
+
+\bibitem{HH}
+S. Hajebi and P. Haxell,
+\emph{Efficient reconfiguration of independent transversals},
+\href{https://arxiv.org/abs/2611.18474v1}{arXiv:2611.18474v1}
+(November 13, 2026), Theorem 1.4 (p.~3) and Corollary 1.5 (p.~4).
+
+\bibitem{CHK}
+S. Cambie, J. Haslegrave and R. J. Kang,
+\emph{When removing an independent set is optimal for reducing the
+chromatic number}, European Journal of Combinatorics \textbf{115},
+103781 (2024).
+\href{https://doi.org/10.1016/j.ejc.2023.103781}{doi:10.1016/j.ejc.2023.103781}.
+\href{https://arxiv.org/abs/2203.13833v2}{arXiv:2203.13833v2},
+Theorem 2; first preprint March 25, 2022.
+
+\bibitem{KPS}
+M. Knor, M. Petru\v{s}evski and R. \v{S}krekovski,
+\emph{On chromatic vertex stability of 3-chromatic graphs with
+maximum degree 4}, Discrete Mathematics Letters \textbf{10},
+75--80 (2022), Theorem 1.2 (p.~76).
+\href{https://doi.org/10.47443/dml.2022.066}{doi:10.47443/dml.2022.066}.
+\end{thebibliography}
+
+\medskip
+\noindent\small
+\textcopyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+\end{document}
