@@ -5,13 +5,15 @@
 The constant-chain-length question of Choi, Yoo, Kim, Kwon and Won (arXiv:2610.41277v1, Section VIII, Open problems (1), p. 7) has a negative answer already on outerplanar subcubic graphs of treewidth two: root-to-leaf forcing makes the required displacement arbitrarily large. For every full rooted triangle tree, the minimum displacement from its nonroot-apex set to an augmentable tight set of the same size equals its shortest leaf depth. The same number is the minimum number of tight exchanges. At depth h, the smallest graph in this class has 9*2^h - 6 vertices. Every optimal two-colouring of a tree of triangles is nevertheless healable, separating the stuck-set obstruction from failure of a prescribed maximum-cut certificate.
 
 - PDF: [frozen public file](paper.pdf)
+- DOI: [https://doi.org/10.5281/zenodo.24487234](https://doi.org/10.5281/zenodo.24487234)
+- Concept DOI: [https://doi.org/10.5281/zenodo.24487233](https://doi.org/10.5281/zenodo.24487233)
 - License: CC-BY-4.0
 - Version: 2
 - Mathesis record: [choi-yoo-kim-kwon-won-healing-chains](https://mathesis-omega-research.apps.chrono-ai.fun/papers/choi-yoo-kim-kwon-won-healing-chains?version=2)
 
 ## How to cite
 
-Haobo Ma, Wenlin Zhang (2026). Unbounded healing chains in the question of Choi, Yoo, Kim, Kwon and Won. Mathesis, version 2. https://mathesis-omega-research.apps.chrono-ai.fun/papers/choi-yoo-kim-kwon-won-healing-chains?version=2
+Haobo Ma, Wenlin Zhang (2026). Unbounded healing chains in the question of Choi, Yoo, Kim, Kwon and Won. Mathesis, version 2. https://doi.org/10.5281/zenodo.24487234
 
 ## Statement progress
 
