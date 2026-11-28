@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24487233",
     "current_version": 2,
     "doi": "10.5281/zenodo.24487234",
+    "kind": "note",
     "lean_source": {
       "revision": "0ad94071772b2f32b432905d088bfce029d8d29e",
       "url": "https://github.com/the-omega-institute/trureturing/blob/0ad94071772b2f32b432905d088bfce029d8d29e/D5/S3/Combinatorics/Graph/Potts/HealingUnbounded.lean"
@@ -55,10 +56,12 @@
     "title": "Unbounded healing chains in the question of Choi, Yoo, Kim, Kwon and Won",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-24T01:24:41.666517982Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "choi-yoo-kim-kwon-won-healing-chains"

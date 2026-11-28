@@ -34,9 +34,9 @@
     "manuscript/sibling-checks.json": "e004d929f913450d4540be11c2d17d7858be5beeddcfda374a6cd708d753aae4",
     "manuscript/verify.py": "b0d6db8df13167b3af739ebdfb8f2168af6ab47d6438bbf7689e483e543c7252",
     "manuscript/verify_siblings.py": "d3a5c049754ad02b7f7a4a280942259a3794cd81d6f17f3437a6919811b04c0a",
-    "paper.json": "bec9587b7cf2072f0afdc8abd432f767e48c92d03338cbccccc3cbc0dcb2f785",
+    "paper.json": "54658be5652cb06261b49a3d9316e9091c52449d53b38024f4854c09831b6360",
     "paper.pdf": "b657a45ed21b70ff9007c1e1070477d2855edaa199fe2c55663393c0e58fee9f",
     "source.archive": "8cfd4c8ae13d741bef36987893dfe0babc9babe07bc5f4bc172e8f768af436ec"
   },
-  "snapshot_identity": "342eb1830f695572604743ac3fa9d3e2931d3e6093ff42d5803c799bef6dd029"
+  "snapshot_identity": "2ea0a83860db0181c46f3b96a22727771e34951dba02904526392d17ab8a9a82"
 }
